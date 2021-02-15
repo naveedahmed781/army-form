@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form__controls {
+            width: 350px;
+            text-align: center;
+            height: 250px;
+            background-color: rgb(13, 106, 160);
+            padding-top: 75px;
+            border:2px solid black;
+            border-top-right-radius:7px;
+            margin:150px auto;
+        }
+
+        input {
+            margin-top: 5px;
+            /* text-align:center; */
+            padding-left: 8px;
+        }
+
+        select {
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" onsubmit="check()">
+        <div class="form__controls">
+            <label for="age">Age</label> <input required placeholder="enter your age" type="number" id="age">
+            <br>
+            <label for="nationality">Nationality:</label> <select id="nationality">
+                <option>Pakistan</option>
+                <option>Saudi</option>
+            </select>
+            <br>
+            <label for="Education">Education:</label> <select id="education">
+                <option>
+                    Matric
+                </option>
+                <option>
+                    Inter
+                </option>
+                <option>
+                    Graduation
+                </option>
+                <option>
+                    Masters
+                </option>
+            </select>
+            <br>
+            <button type="submit">Submit</button>
+            <h3>Result:<span id="result"></span></h3>
+        </div>
+    </form>
+
+    <script>
+
+
+
+        const check = () => {
+
+            var age = parseInt(document.getElementById("age").value);
+            var nationality = document.getElementById("nationality").value;
+            var education = document.getElementById("education").value;
+            var result = document.getElementById("result");
+            height = 5.5;
+
+            console.log("nationality==>", nationality);
+            console.log("education==>", education);
+            console.log("age==>", age);
+
+            // if (nationality === "Pakistan" && height >= 5.5 &&
+            //     (
+            //         (age >= 18 && age <= 22) && education === "Graduation"
+
+            //         || (age >= 18 && age <= 28) && education === "Masters")
+            // ) {
+            //     result.innerHTML = " Selected";
+            // }
+            // else {
+            //     result.innerHTML = " Not Selected";
+            // }
+
+            if (nationality === "Pakistan" && height >= 5.5) {
+                if (age >= 18 && age <= 22 && education === "Graduation" || (age >= 18 && age <= 28) && education === "Masters") {
+                    result.innerHTML = " Selected";
+
+                }
+                else {
+                    result.innerHTML = " Not Selected";
+                }
+            }
+            else {
+                result.innerHTML = " Not Selected";
+            }
+
+            age.value = "";
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
